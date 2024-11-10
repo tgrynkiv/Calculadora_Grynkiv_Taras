@@ -8,61 +8,65 @@
 <body>
     
     <script>    
-        const pantallaInfo= document.getElementById("pantallaInfo");
-        const pantallaResultat= document.getElementById("pantallaResultat");
-
-        var operand1 = "0";
-
-        document.addEventListener("DOMContentLoaded", function () {
-        operand1 = "0";
-        document.getElementById("pantallaResultat").value = operand1;
-        });
-
-        let comprovarOperand = (operand) => {
-        // heu de fer les comprovacions oportunes per si operand es correcte
-        //  retornem un número o codi error i un missatge associat "Error massa llarg": seria bo tenir un manual amb codi error i missatge
-        return 0, "Tot correcte";
-        //  return 1, "Error massa llarg";
-        };
+        const pantallaInfo= document.getElementById("pantallaInfo"); // pantalla on apareixera informacio
+        const pantallaResultat= document.getElementById("pantallaResultat"); // pantalla on apareixeran resultats
 
 
-        function tractarUn() {
-            operand1 = operand1 + "1";
-            let pantalla = document.getElementById("pantallaResultat");
-            let pantallaError = document.getElementById("pantallaInfo");
-            let error = 0;
 
-            error, errorMsg = comprovarOperand(operand1); //comprovar errors llargada, numero decimals... error 0 sense errors, error=1 massa llarg...
-            if (error == 0) {
-                //Correcte ho imprimeixo per pantalla
-                pantalla.value = operand1;
-            } else {
-                //error
-                //desfer el operand que afegit 1 operand1 = operand1 - "1";
-                operand1 = operand1.substring(0, operand1.length - 1);
-                console.log("error desfem operand1" + operand1);
-                pantallaError.value = errorMsg;
-            }
-        }
 
-        let tractarDos = () => {
-            operand1 = operand1 + "2";
-            let pantalla = document.getElementById("pantallaResultat");
-            let pantallaError = document.getElementById("pantallaInfo");
-            let error = 0;
 
-            error, errorMsg = comprovarOperand(operand1); //comprovar errors llargada, numero decimals... error 0 sense errors, error=1 massa llarg...
-            if (error == 0) {
-                //Correcte ho imprimeixo per pantalla
-                pantalla.value = operand1;
-            } else {
-                //error
-                //desfer el operand que afegit 1 operand1 = operand1 - "1";
-                operand1 = operand1.substring(0, operand1.length - 1);
-                console.log("error desfem operand1" + operand1);
-                pantallaError.value = errorMsg;
-            }
-        };
+        // var operand1 = "0";
+
+        // document.addEventListener("DOMContentLoaded", function () {
+        // operand1 = "0";
+        // document.getElementById("pantallaResultat").value = operand1;
+        // });
+
+        // let comprovarOperand = (operand) => {
+        // // heu de fer les comprovacions oportunes per si operand es correcte
+        // //  retornem un número o codi error i un missatge associat "Error massa llarg": seria bo tenir un manual amb codi error i missatge
+        // return 0, "Tot correcte";
+        // //  return 1, "Error massa llarg";
+        // };
+
+
+        // function tractarUn() {
+        //     operand1 = operand1 + "1";
+        //     let pantalla = document.getElementById("pantallaResultat");
+        //     let pantallaError = document.getElementById("pantallaInfo");
+        //     let error = 0;
+
+        //     error, errorMsg = comprovarOperand(operand1); //comprovar errors llargada, numero decimals... error 0 sense errors, error=1 massa llarg...
+        //     if (error == 0) {
+        //         //Correcte ho imprimeixo per pantalla
+        //         pantalla.value = operand1;
+        //     } else {
+        //         //error
+        //         //desfer el operand que afegit 1 operand1 = operand1 - "1";
+        //         operand1 = operand1.substring(0, operand1.length - 1);
+        //         console.log("error desfem operand1" + operand1);
+        //         pantallaError.value = errorMsg;
+        //     }
+        // }
+
+        // let tractarDos = () => {
+        //     operand1 = operand1 + "2";
+        //     let pantalla = document.getElementById("pantallaResultat");
+        //     let pantallaError = document.getElementById("pantallaInfo");
+        //     let error = 0;
+
+        //     error, errorMsg = comprovarOperand(operand1); //comprovar errors llargada, numero decimals... error 0 sense errors, error=1 massa llarg...
+        //     if (error == 0) {
+        //         //Correcte ho imprimeixo per pantalla
+        //         pantalla.value = operand1;
+        //     } else {
+        //         //error
+        //         //desfer el operand que afegit 1 operand1 = operand1 - "1";
+        //         operand1 = operand1.substring(0, operand1.length - 1);
+        //         console.log("error desfem operand1" + operand1);
+        //         pantallaError.value = errorMsg;
+        //     }
+        // };
 
 
     </script>
@@ -72,22 +76,22 @@
         <input disabled id="pantallaInfo" placeholder="0" type="text"> <br>
 
 
-        <button id="boto7" onclick="">7</button>
-        <button id="boto8" onclick="">8</button>
-        <button id="boto9" onclick="">9</button>
+        <button id="7" onclick="">7</button>
+        <button id="8" onclick="">8</button>
+        <button id="9" onclick="">9</button>
         <button id="dividir" onclick="">/</button>
         <br>
-        <button id="boto4" onclick="">4</button>
-        <button id="boto5" onclick="">5</button>
-        <button id="boto6" onclick="">6</button>
+        <button id="4" onclick="">4</button>
+        <button id="5" onclick="">5</button>
+        <button id="6" onclick="">6</button>
         <button id="multiplicar" onclick="">*</button>
         <br>
-        <button id="boto1" onclick="tractarUn()">1</button>
-        <button id="boto2" onclick="">2</button>
-        <button id="boto3" onclick="">3</button>
+        <button id="1" onclick="tractarUn()">1</button>
+        <button id="2" onclick="">2</button>
+        <button id="3" onclick="">3</button>
         <button id="restar" onclick="">-</button>
         <br>
-        <button id="boto0" onclick="">0</button>
+        <button id="0" onclick="">0</button>
         <button id="borrar_tot" onclick="">C</button>
         <button id="borrar" onclick="">B</button>
         <button id="sumar" onclick="">+</button>
