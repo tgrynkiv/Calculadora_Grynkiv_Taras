@@ -155,3 +155,20 @@
         function mostrarError(err_msg){
             document.getElementById("pantallaInfo").value = err_msg;
         }
+
+        function decimal(){     //funcio per crear decimals
+            if(operador ===""){     //identifiquem el operand
+
+                if(!operand1.includes(".")){    //aquest if no permet que hi hagi més d'un "." en el operand1
+                    operand1 += ".";                //concatenem un "." a operand1
+                    mostrarPerPantalla(operand1);
+                }
+
+            }else{
+
+                if(!operand2.includes(".")){    //aquest if no permet que hi hagi més d'un "." en el operand2
+                    operand2 += ".";                //concatenem un "." a operand2
+                    mostrarPerPantalla(operand2);
+                }
+            }
+        }
