@@ -73,8 +73,9 @@
             if (operador==""){
                 operador = "+";
             }else {
-                mostrarError("Error: no pots possar dos operadors");
-                
+                mostrarError("Has posat 2 operadors, se seleccionarà l'últim");
+                operador = ""
+                operador = "+";
             }
         }
 
@@ -82,24 +83,30 @@
             if (operador==""){
                 operador = "-";
             }else {
-                mostrarError("Error: no pots possar dos operadors");
+                mostrarError("Has posat 2 operadors, se seleccionarà l'últim");
+                operador = ""
+                operador = "-";
             };
         }
 
         function multiplicar(){
             if (operador==""){
-            operador = "*";
+                operador = "*";
             }else {
-                mostrarError("Error: no pots possar dos operadors");
+                mostrarError("Has posat 2 operadors, se seleccionarà l'últim");
+                operador = ""
+                operador = "*";
             }
         }
 
         function dividir(){
             if (operador==""){
                 operador = "/";
-                }else {
-                    mostrarError("Error: no pots possar dos operadors");
-                }
+            }else {
+                mostrarError("Has posat 2 operadors, se seleccionarà l'últim");
+                operador = ""
+                operador = "/";
+            }
         }
 
         function sumaOperand(oprand_a, operand_b){
