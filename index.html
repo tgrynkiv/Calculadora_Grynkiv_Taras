@@ -12,6 +12,7 @@
         var operand1 = ""; //variable per guardar operand1
         var operand2 = "";  //variable per guardar operand2
         var operador = "";  //variable per guardar operador (+,-,*,/)
+        const maxim_operand = 5; //definim constarnt per mes endevant limitar la llargada dels operands
 
         document.addEventListener("DOMContentLoaded", function () {     //Inicialitza la pantalla
         operand1 = ""; 
@@ -23,12 +24,20 @@
 
         function printarNumero(numero){     // aquesta funcio permet printar numeros, mostrara el operand (1 o 2) segons hi hagi o no operador                             
             if(operador === ""){
-                operand1 += numero;             // el += concatena cadenes
-                mostrarPerPantalla(operand1);
+                if(operand1.length < maxim_operand){    //fem ser .length per optenir la llargada de la cadena 
+                    operand1 += numero;             // el += concatena cadenes
+                    mostrarPerPantalla(operand1);
+                }else{
+                    mostrarError("Error: El numero es massa llarg");
+                }
             }else{
+                if(operand2.length < maxim_operand){
                 operand2 += numero;
                 mostrarPerPantalla(operand2);
+            }else{
+                mostrarError("Error: El numero es massa llarg");
             }
+        }
         }
 
         function tractarUn() {
@@ -103,7 +112,7 @@
             if (operand_b !== "0"){
                return Number(oprand_a) / Number(operand_b);
             }else{
-                return "Error: no es pot dividir entre 0";
+                return mostrarError("Error: no es pot dividir entre 0");
             }    
         }
 
@@ -152,6 +161,10 @@
 
         function mostrarPerPantalla(num_operand) {
             document.getElementById("pantallaResultat").value = num_operand; // mostrara per pantalla operand1 o operand2 segons la funcio printarNumero 
+        }
+
+        function mostrarError(err_msg){
+            document.getElementById("pantallaInfo").value = err_msg;
         }
        
     </script>
