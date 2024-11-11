@@ -9,76 +9,149 @@
 <body>
     
     <script>    
-        var operand1 = "0"; //variable per guardar operan
+        var operand1 = ""; //variable per guardar operand1
+        var operand2 = "";  //variable per guardar operand2
+        var operador = "";  //variable per guardar operador (+,-,*,/)
 
         document.addEventListener("DOMContentLoaded", function () {     //Inicialitza la pantalla
-        operand1 = "";
+        operand1 = ""; 
+        operand2 = "";  
+        operador = "";
+        document.getElementById("pantallaInfo").value = "";
         document.getElementById("pantallaResultat").value = operand1;
         });
 
+        function printarNumero(numero){     // aquesta funcio permet printar numeros, mostrara el operand (1 o 2) segons hi hagi o no operador                             
+            if(operador === ""){
+                operand1 += numero;             // el += concatena cadenes
+                mostrarPerPantalla(operand1);
+            }else{
+                operand2 += numero;
+                mostrarPerPantalla(operand2);
+            }
+        }
+
         function tractarUn() {
-            operand1 = operand1 + "1";
-            mostrarPerPantalla();
+            printarNumero("1");
         }
 
         function tractarDos() {
-            operand1 = operand1 + "2";
-            mostrarPerPantalla();
+            printarNumero("2");
         }
 
         function tractarTres() {
-            operand1 = operand1 + "3";
-            mostrarPerPantalla();
+            printarNumero("3");
         }
 
         function tractarQuatre() {
-            operand1 = operand1 + "4";
-            mostrarPerPantalla();
+            printarNumero("4");
         }
 
         function tractarCinc() {
-            operand1 = operand1 + "5";
-            mostrarPerPantalla();
+            printarNumero("5");
         }
 
         function tractarSis() {
-            operand1 = operand1 + "6";
-            mostrarPerPantalla();
+            printarNumero("6");
         }
 
         function tractarSet() {
-            operand1 = operand1 + "7";
-            mostrarPerPantalla();
+            printarNumero("7");
         }
 
         function tractarVuit() {
-            operand1 = operand1 + "8";
-            mostrarPerPantalla();
+            printarNumero("8");
         }
 
         function tractarNou() {
-            operand1 = operand1 + "9";
-            mostrarPerPantalla();
+            printarNumero("9");
         }
 
         function tractarZero() {
-            operand1 = operand1 + "0";
-            mostrarPerPantalla();
+            printarNumero("0");
         }
 
-        function borrarUltim() {
-            operand1 = operand1.slice(0, -1); //el metode .slice permet treure un element de la cadena, sempre i quan sigui string
-            mostrarPerPantalla();
+        function sumar(){   
+            operador = "+";
+        }
+
+        function restar(){
+            operador = "-";
+        }
+
+        function multiplicar(){
+            operador = "*";
+        }
+
+        function dividir(){
+            operador = "/";
+        }
+
+        function sumaOperand(oprand_a, operand_b){
+            return Number(oprand_a) + Number(operand_b); //Number() permet convertir un string en un numero
+        }
+
+        function restaOperand(oprand_a, operand_b){
+            return Number(oprand_a) - Number(operand_b);
+        }
+
+        function multiplicaOperand(oprand_a, operand_b){
+            return Number(oprand_a) * Number(operand_b);
+        }       
+
+        function divideixOperand(oprand_a, operand_b){
+            if (operand_b !== "0"){
+               return Number(oprand_a) / Number(operand_b);
+            }else{
+                return "Error: no es pot dividir entre 0";
+            }    
+        }
+
+        function igual(){
+            if (operand1 && operand2 && operador){ //si les tres variables estan definides 
+                let resultat;
+
+                if (operador === "+") {
+                    resultat = sumaOperand(operand1, operand2); 
+
+                }else if (operador === "-"){
+                    resultat = restaOperand(operand1, operand2);
+
+                }else if (operador === "*"){
+                    resultat = multiplicaOperand(operand1, operand2);
+
+                }else if (operador === "/"){
+                    resultat = divideixOperand(operand1, operand2);
+                }
+
+                mostrarPerPantalla(resultat);
+
+                operand1 = resultat.toString(); //convertim el resultat en un string
+                operand2 = "";                  //igualem operand2 a cadena buida
+                operador = "";                  //igualem operador a cadena buida
+            }
+        }
+
+        function borrarUltim() {    //borra l'ultim numero del operand1 o operand2 segons si hi ha o no operador
+            if(operador === ""){
+                operand1 = operand1.slice(0, -1); //el metode .slice permet treure un element de la cadena, sempre i quan sigui string
+                mostrarPerPantalla(operand1);
+            }else{
+                operand2 = operand2.slice(0, -1);
+                mostrarPerPantalla(operand2);
+            }   
         }
 
         function borrar_Tot() {
             operand1 = "";  //reiniciem el valor de operand1
+            operand2 = "";  //reiniciem el valor de operand1
+            operador = "";  //reiniciem el operador
             document.getElementById("pantallaResultat").value = "";    //borra pantalla de resultats
             document.getElementById("pantallaInfo").value = "";        //borra pantalla de info
         }
 
-        function mostrarPerPantalla() {
-            document.getElementById("pantallaResultat").value = operand1;
+        function mostrarPerPantalla(num_operand) {
+            document.getElementById("pantallaResultat").value = num_operand; // mostrara per pantalla operand1 o operand2 segons la funcio printarNumero 
         }
        
     </script>
@@ -93,23 +166,23 @@
         <div id ="botons">
             <button id="borrarTot" onclick="borrar_Tot()">C</button>
             <button id="borrarUltim" onclick="borrarUltim()">B</button>
-            <button id="dividir" onclick="">/</button>
-            <button id="multiplicar" onclick="">*</button>
+            <button id="dividir" onclick="dividir()">/</button>
+            <button id="multiplicar" onclick="multiplicar()">*</button>
             
             <button id="b7" onclick="tractarSet()">7</button>
             <button id="b8" onclick="tractarVuit()">8</button>
             <button id="b9" onclick="tractarNou()">9</button>
-            <button id="restar" onclick="">-</button>
+            <button id="restar" onclick="restar()">-</button>
             
             <button id="b4" onclick="tractarQuatre()">4</button>
             <button id="b5" onclick="tractarCinc()">5</button>
             <button id="b6" onclick="tractarSis()">6</button>
-            <button id="sumar" onclick="">+</button>
+            <button id="sumar" onclick="sumar()">+</button>
             
             <button id="b1" onclick="tractarUn()">1</button>
             <button id="b2" onclick="tractarDos()">2</button>
             <button id="b3" onclick="tractarTres()">3</button>
-            <button id="igual" onclick="">=</button>
+            <button id="igual" onclick="igual()">=</button>
            
             <button id="b0" onclick="tractarZero()">0</button>
             <button id="punt" onclick="">.</button>

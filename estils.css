@@ -7,34 +7,34 @@
     margin: 30px auto;
     padding: 10px;
     background-color: grey;
-    max-width: 215px;
+    max-width: 260px;
 }
 
 #borrarTot, #borrarUltim, #dividir, #multiplicar, #restar, #sumar, #igual, #b1, #b2, #b3, #b4, #b5, #b6, #b7, #b8, #b9, #punt{
-    width: 50px;
+    width: 60px;
     margin-top: 5px;
     height: 35px;
 }
 
 #b0{
-    width: 104px;
+    width: 124px;
     margin-top: 5px;
     height: 35px;
 }
 
 #pantallaResultat{
-    width: 190px;
+    width: 230px;
     height: 40px;
     margin-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
     text-align: right;
-    font-size: 30px;
+    font-size: 15px;
     color: rgb(0, 0, 0);
 }
 
 #pantallaInfo{
-    width: 190px;
+    width: 230px;
     height: 40px;
     margin-bottom: 5px;
     padding-left: 10px;
