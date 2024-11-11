@@ -1,7 +1,7 @@
         var operand1 = ""; //variable per guardar operand1
         var operand2 = "";  //variable per guardar operand2
         var operador = "";  //variable per guardar operador (+,-,*,/)
-        const maxim_operand = 5; //definim constarnt per mes endevant limitar la llargada dels operands
+        const MAXIM_NUMERO_OPERADOR = 5; //definim constarnt per mes endevant limitar la llargada dels operands
 
         document.addEventListener("DOMContentLoaded", function () {     //Inicialitza la pantalla
         operand1 = ""; 
@@ -13,14 +13,14 @@
 
         function printarNumero(numero){     // aquesta funcio permet printar numeros, mostrara el operand (1 o 2) segons hi hagi o no operador                             
             if(operador === ""){
-                if(operand1.length < maxim_operand){    //fem ser .length per optenir la llargada de la cadena 
+                if(operand1.length < MAXIM_NUMERO_OPERADOR){    //fem ser .length per optenir la llargada de la cadena 
                     operand1 += numero;             // el += concatena cadenes
                     mostrarPerPantalla(operand1);
                 }else{
                     mostrarError("Error: El numero es massa llarg");
                 }
             }else{
-                if(operand2.length < maxim_operand){
+                if(operand2.length < MAXIM_NUMERO_OPERADOR){
                 operand2 += numero;
                 mostrarPerPantalla(operand2);
             }else{
@@ -70,19 +70,36 @@
         }
 
         function sumar(){   
-            operador = "+";
+            if (operador==""){
+                operador = "+";
+            }else {
+                mostrarError("Error: no pots possar dos operadors");
+                
+            }
         }
 
         function restar(){
-            operador = "-";
+            if (operador==""){
+                operador = "-";
+            }else {
+                mostrarError("Error: no pots possar dos operadors");
+            };
         }
 
         function multiplicar(){
+            if (operador==""){
             operador = "*";
+            }else {
+                mostrarError("Error: no pots possar dos operadors");
+            }
         }
 
         function dividir(){
-            operador = "/";
+            if (operador==""){
+                operador = "/";
+                }else {
+                    mostrarError("Error: no pots possar dos operadors");
+                }
         }
 
         function sumaOperand(oprand_a, operand_b){
