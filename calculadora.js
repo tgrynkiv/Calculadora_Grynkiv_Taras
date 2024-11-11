@@ -1,4 +1,3 @@
-  
         var operand1 = ""; //variable per guardar operand1
         var operand2 = "";  //variable per guardar operand2
         var operador = "";  //variable per guardar operador (+,-,*,/)
