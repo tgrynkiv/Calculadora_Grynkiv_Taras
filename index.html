@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="estils.css">
 </head>
 <body>
     
     <script>    
         const pantallaInfo= document.getElementById("pantallaInfo"); // pantalla on apareixera informacio
         const pantallaResultat= document.getElementById("pantallaResultat"); // pantalla on apareixeran resultats
-
-
-
 
 
         // var operand1 = "0";
@@ -71,32 +69,38 @@
 
     </script>
 
-    <div>
-        <input disabled id="pantallaResultat" placeholder="0" type="text"> <br>
-        <input disabled id="pantallaInfo" placeholder="0" type="text"> <br>
+    <div id="Calculadora">
+        <div id="pantalles">
+            <input disabled id="pantallaResultat" placeholder="0" type="text"> <br>
+            <input disabled id="pantallaInfo" placeholder="0" type="text"> 
 
+        </div>
 
-        <button id="7" onclick="">7</button>
-        <button id="8" onclick="">8</button>
-        <button id="9" onclick="">9</button>
-        <button id="dividir" onclick="">/</button>
-        <br>
-        <button id="4" onclick="">4</button>
-        <button id="5" onclick="">5</button>
-        <button id="6" onclick="">6</button>
-        <button id="multiplicar" onclick="">*</button>
-        <br>
-        <button id="1" onclick="tractarUn()">1</button>
-        <button id="2" onclick="">2</button>
-        <button id="3" onclick="">3</button>
-        <button id="restar" onclick="">-</button>
-        <br>
-        <button id="0" onclick="">0</button>
-        <button id="borrar_tot" onclick="">C</button>
-        <button id="borrar" onclick="">B</button>
-        <button id="sumar" onclick="">+</button>
-        <button id="igual" onclick="">=</button>
-
+        <div id ="botons">
+            <button id="borrarTot" onclick="">C</button>
+            <button id="borrarUltim" onclick="">B</button>
+            <button id="dividir" onclick="">/</button>
+            <button id="multiplicar" onclick="">*</button>
+            <br>
+            <button id="b7" onclick="">7</button>
+            <button id="b8" onclick="">8</button>
+            <button id="b9" onclick="">9</button>
+            <button id="restar" onclick="">-</button>
+            <br>
+            <button id="b4" onclick="">4</button>
+            <button id="b5" onclick="">5</button>
+            <button id="b6" onclick="">6</button>
+            <button id="sumar" onclick="">+</button>
+            <br>
+            <button id="b1" onclick="">1</button>
+            <button id="b2" onclick="">2</button>
+            <button id="b3" onclick="">3</button>
+            <button id="igual" onclick="">=</button>
+            <br>
+            <button id="b0" onclick="">0</button>
+            <button id="punt" onclick="">.</button>
+            
+        </div>
     </div>
 
 </body>

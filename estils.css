@@ -1,3 +1,34 @@
-button{
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#Calculadora{
+    margin: 30px auto;
+    padding: 10px;
+    background-color: grey;
+    max-width: 215px;
+}
+
+#borrarTot, #borrarUltim, #dividir, #multiplicar, #restar, #sumar, #igual, #b1, #b2, #b3, #b4, #b5, #b6, #b7, #b8, #b9, #punt{
+    width: 50px;
+    margin-top: 5px;
+    height: 35px;
+}
+
+#b0{
+    width: 104px;
+    margin-top: 5px;
+    height: 35px;
+}
+
+#pantallaResultat{
+
+}
+
+
+body{
+    background-color: black;
     
 }
+
