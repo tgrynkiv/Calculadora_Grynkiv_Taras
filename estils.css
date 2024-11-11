@@ -44,8 +44,18 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
 body{
-    background-color: black; 
+    background-color: lightgray; 
 }
 
+@media (width:412px){
+    body{
+        background-color: black;
+    }
+}
+
+@media (width:1080px){
+    body{
+        background-color: rgb(111, 129, 166);
+    }
+}
