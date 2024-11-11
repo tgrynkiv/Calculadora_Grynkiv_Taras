@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estils.css">
+</head>
+<body>
+    
+    <script src="calculadora.js"></script>
+
+    <div id="Calculadora">
+        <div id="pantalles">
+            <input disabled id="pantallaResultat" placeholder="0" type="text">
+            <input disabled id="pantallaInfo" placeholder="Info" type="text"> 
+
+        </div>
+
+        <div id ="botons">
+            <button id="borrarTot" onclick="borrar_Tot()">C</button>
+            <button id="borrarUltim" onclick="borrarUltim()">B</button>
+            <button id="dividir" onclick="dividir()">/</button>
+            <button id="multiplicar" onclick="multiplicar()">*</button>
+            
+            <button id="b7" onclick="tractarSet()">7</button>
+            <button id="b8" onclick="tractarVuit()">8</button>
+            <button id="b9" onclick="tractarNou()">9</button>
+            <button id="restar" onclick="restar()">-</button>
+            
+            <button id="b4" onclick="tractarQuatre()">4</button>
+            <button id="b5" onclick="tractarCinc()">5</button>
+            <button id="b6" onclick="tractarSis()">6</button>
+            <button id="sumar" onclick="sumar()">+</button>
+            
+            <button id="b1" onclick="tractarUn()">1</button>
+            <button id="b2" onclick="tractarDos()">2</button>
+            <button id="b3" onclick="tractarTres()">3</button>
+            <button id="igual" onclick="igual()">=</button>
+           
+            <button id="b0" onclick="tractarZero()">0</button>
+            <button id="punt" onclick="decimal()">.</button>
+            
+        </div>
+    </div>
+
+</body>
+</html>
