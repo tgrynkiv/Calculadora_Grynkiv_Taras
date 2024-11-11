@@ -73,7 +73,7 @@
             if (operador==""){
                 operador = "+";
             }else {
-                mostrarError("Has posat 2 operadors, se seleccionarà l'últim");
+                mostrarError("2 operadors seguits, es seleccionarà l'últim");
                 operador = ""
                 operador = "+";
             }
@@ -83,7 +83,7 @@
             if (operador==""){
                 operador = "-";
             }else {
-                mostrarError("Has posat 2 operadors, se seleccionarà l'últim");
+                mostrarError("2 operadors seguits, es seleccionarà l'últim");
                 operador = ""
                 operador = "-";
             };
@@ -93,7 +93,7 @@
             if (operador==""){
                 operador = "*";
             }else {
-                mostrarError("Has posat 2 operadors, se seleccionarà l'últim");
+                mostrarError("2 operadors seguits, es seleccionarà l'últim");
                 operador = ""
                 operador = "*";
             }
@@ -103,7 +103,7 @@
             if (operador==""){
                 operador = "/";
             }else {
-                mostrarError("Has posat 2 operadors, se seleccionarà l'últim");
+                mostrarError("2 operadors seguits, es seleccionarà l'últim");
                 operador = ""
                 operador = "/";
             }
